@@ -1,0 +1,14 @@
+{
+  "name": "benu",
+  "version": "1.0.0",
+  "description": "Recreate Benu Website",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass -w scss/ -o dist/css/ --recursive"
+  },
+  "author": "ChangKeun Ji",
+  "license": "ISC",
+  "dependencies": {
+    "node-sass": "^4.12.0"
+  }
+}
