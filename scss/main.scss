@@ -1,5 +1,39 @@
-$primary-color: green;
+@import "config";
+@import "menu";
 
 body {
-  color: $primary-color;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+
+  &#bg-image {
+    background: url(../img/background1.jpg);
+    background-position: center;
+    background-size: cover;
+  }
+}
+
+#text {
+  h1 {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    font-size: 7rem;
+    left: 10%;
+    top: 40%;
+    // transform: translateY(-20%);
+    color: #eee;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: 0.7s all ease-in-out;
+
+    &.text-show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 }

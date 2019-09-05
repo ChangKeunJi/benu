@@ -1,0 +1,117 @@
+// Hamburger Navbar
+
+.menu-btn {
+  position: fixed;
+  right: 35px;
+  top: 35px;
+  z-index: 1;
+  cursor: pointer;
+  @include easeOut;
+
+  .btn-line {
+    width: 28px;
+    height: 3px;
+    margin-top: 6px;
+    background: #eee;
+    @include easeOut;
+  }
+
+  &.close {
+    transform: rotate(180deg);
+
+    .btn-line {
+      background: #000;
+    }
+
+    .btn-line {
+      &:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+
+      &:nth-child(2) {
+        opacity: 0;
+      }
+
+      &:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+      }
+    }
+  }
+}
+
+// Menu Overlay
+
+.menu {
+  position: fixed;
+  left: 70%;
+  top: 0;
+  width: 30%;
+  opacity: 0.8;
+  text-align: center;
+
+  &-nav {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background: $primary-color;
+    display: flex;
+    flex-flow: column wrap;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+    transform: translate3d(100%, 0, 0);
+    @include easeOut;
+
+    &.show {
+      transform: translate3d(0, 0, 0);
+    }
+
+    .nav-item {
+      display: flex;
+      justify-content: center;
+      transform: translate3d(600px, 0, 0);
+      width: 100%;
+      @include easeOut;
+
+      &.show {
+        transform: translate3d(0, 0, 0);
+      }
+
+      .nav-link {
+        display: inline-block;
+        // position: relative;
+        font-size: 2rem;
+        text-decoration: none;
+        font-weight: 300;
+        padding: 2rem 0;
+        color: $secondary-color;
+
+        &::after {
+          content: "";
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          border-bottom: 2px solid #000;
+          top: 0;
+          left: 0;
+          transform: translateX(100%);
+          transition: transform 0.5s ease;
+        }
+
+        &.active::after {
+          transform: translateX(0%);
+        }
+
+        // &:hover {
+        //   color: lighten($secondary-color, 50);
+        // }
+      }
+    }
+  }
+}
+
+@for $x from 1 through 4 {
+  .nav-item:nth-child(#{$x}) {
+    transition-delay: $x * 0.1s;
+  }
+}
