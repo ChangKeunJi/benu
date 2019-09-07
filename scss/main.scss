@@ -1,6 +1,8 @@
 @import "config";
 @import "menu";
 
+// Home
+
 body {
   margin: 0;
   padding: 0;
@@ -9,31 +11,115 @@ body {
   height: 100vh;
   overflow: hidden;
   position: relative;
+  background: rgb(255, 255, 255);
 
+  header {
+    &.about,
+    &.team {
+      height: 15%;
+      background: lighten($secondary-color, 20);
+      color: #fff;
+
+      #benu-btn {
+        position: relative;
+
+        h1 {
+          margin: 0;
+          a {
+            position: fixed;
+            top: 1.5rem;
+            left: 1.5rem;
+            text-decoration: none;
+            color: #eee;
+          }
+        }
+      }
+    }
+  }
   &#bg-image {
     background: url(../img/background1.jpg);
     background-position: center;
     background-size: cover;
   }
+
+  #icons {
+    position: fixed;
+    top: 35px;
+    right: 100px;
+    z-index: 4;
+
+    a {
+      padding-right: 1.5rem;
+      color: #fff;
+
+      &:hover {
+        color: $secondary-color;
+      }
+    }
+  }
+
+  #text {
+    h1 {
+      margin: 0;
+      padding: 0;
+      position: absolute;
+      font-size: 7rem;
+      left: 10%;
+      top: 40%;
+      // transform: translateY(-20%);
+      color: #eee;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: 0.7s all ease-in-out;
+      animation: reveal 1.5s cubic-bezier(0, 0, 0, 1) 1 normal forwards;
+    }
+  }
 }
 
-#text {
-  h1 {
-    margin: 0;
-    padding: 0;
-    position: absolute;
-    font-size: 7rem;
-    left: 10%;
-    top: 40%;
-    // transform: translateY(-20%);
-    color: #eee;
-    opacity: 0;
-    transform: translateY(50px);
-    transition: 0.7s all ease-in-out;
+// About
+#about {
+  height: 85%;
+  .container {
+    display: flex;
+    padding: 2rem;
+    // height: 100%;
+    .about-image {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .img-selected {
+        width: 30rem;
+        height: 25rem;
+      }
 
-    &.text-show {
-      opacity: 1;
-      transform: translateY(0);
+      .img-preview {
+        margin-top: 0.2rem;
+        display: flex;
+        width: 30rem;
+
+        img {
+          cursor: pointer;
+          opacity: 0.6;
+          width: 100px;
+          flex-grow: 1;
+
+          &.img-active {
+            opacity: 1;
+          }
+
+          &:hover {
+            opacity: 1;
+          }
+        }
+      }
+    }
+    .about-text {
+      animation: reveal 1.5s cubic-bezier(0, 0, 0, 1) 1 normal forwards;
+      width: 50%;
+      padding: 4rem;
+      line-height: 2.2rem;
     }
   }
 }

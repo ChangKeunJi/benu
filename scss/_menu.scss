@@ -4,9 +4,16 @@
   position: fixed;
   right: 35px;
   top: 35px;
-  z-index: 1;
+  z-index: 4;
   cursor: pointer;
+
   @include easeOut;
+
+  &.about {
+    .btn-line {
+      background: $secondary-color;
+    }
+  }
 
   .btn-line {
     width: 28px;
@@ -46,8 +53,9 @@
   left: 70%;
   top: 0;
   width: 30%;
-  opacity: 0.8;
+  opacity: 0.9;
   text-align: center;
+  z-index: 3;
 
   &-nav {
     margin: 0;
@@ -101,10 +109,6 @@
         &.active::after {
           transform: translateX(0%);
         }
-
-        // &:hover {
-        //   color: lighten($secondary-color, 50);
-        // }
       }
     }
   }
