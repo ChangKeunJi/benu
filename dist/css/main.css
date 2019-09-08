@@ -1,7 +1,7 @@
 @keyframes reveal {
   0% {
     opacity: 0;
-    transform: translateY(60%); }
+    transform: translateY(40%); }
   100% {
     opacity: 1;
     transform: translateY(0); } }
@@ -13,8 +13,8 @@
   z-index: 4;
   cursor: pointer;
   transition: all 0.3s ease-out; }
-  .menu-btn.about .btn-line {
-    background: #444; }
+  .menu-btn.rest .btn-line {
+    background: #000; }
   .menu-btn .btn-line {
     width: 28px;
     height: 3px;
@@ -44,7 +44,7 @@
     margin: 0;
     padding: 0;
     height: 100vh;
-    background: #eee;
+    background: #d1d1d1;
     display: flex;
     flex-flow: column wrap;
     list-style: none;
@@ -94,29 +94,51 @@
 .nav-item:nth-child(4) {
   transition-delay: 0.4s; }
 
+@media screen and (max-width: 415px) {
+  .menu {
+    left: 0;
+    width: 100%; }
+  #benu-btn h1 {
+    display: none; }
+  #about .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center; }
+    #about .container .about-image .img-preview {
+      display: none; } }
+
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Open Sans", sans-serif;
   height: 100vh;
+  width: 100%;
   overflow: hidden;
+  overflow-x: hidden;
   position: relative;
-  background: white; }
-  body header.about, body header.team {
+  background: #dfdbdb; }
+  body header.rest {
     height: 15%;
-    background: #777777;
-    color: #fff; }
-    body header.about #benu-btn, body header.team #benu-btn {
-      position: relative; }
-      body header.about #benu-btn h1, body header.team #benu-btn h1 {
-        margin: 0; }
-        body header.about #benu-btn h1 a, body header.team #benu-btn h1 a {
-          position: fixed;
-          top: 1.5rem;
-          left: 1.5rem;
-          text-decoration: none;
-          color: #eee; }
+    color: #000;
+    position: relative;
+    background-color: #eee; }
+    body header.rest #benu-btn {
+      height: inherit;
+      position: fixed;
+      display: flex;
+      align-items: center;
+      padding-left: 1rem; }
+      body header.rest #benu-btn a {
+        text-decoration: none;
+        color: #000; }
+    body header.rest .page-title {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-bottom: 1px solid #000; }
   body#bg-image {
     background: url(../img/background1.jpg);
     background-position: center;
@@ -128,7 +150,7 @@ body {
     z-index: 4; }
     body #icons a {
       padding-right: 1.5rem;
-      color: #fff; }
+      color: #eee; }
       body #icons a:hover {
         color: #444; }
   body #text h1 {
@@ -176,3 +198,60 @@ body {
       width: 50%;
       padding: 4rem;
       line-height: 2.2rem; }
+
+#team {
+  height: 85%;
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr;
+  padding-top: 1.5rem; }
+  #team .img-slider {
+    display: grid;
+    grid-template-areas: "team-img team-title" "team-text team-text";
+    grid-template-columns: repeat(2, 1fr); }
+    #team .img-slider .team-img {
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+      #team .img-slider .team-img img {
+        width: 70%;
+        background-size: cover;
+        background-position: center; }
+    #team .img-slider .team-title {
+      grid-area: team-title;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center; }
+    #team .img-slider .team-text {
+      padding: 0 5rem;
+      grid-area: team-text;
+      line-height: 1.7rem;
+      animation: reveal 1.5s cubic-bezier(0, 0, 0, 1) 1 normal forwards; }
+  #team .arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    #team .arrow .fa-arrow-right {
+      z-index: 3; }
+
+#contact {
+  height: 85%;
+  display: grid;
+  grid-template-columns: 1fr 1fr; }
+  #contact .map {
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    #contact .map #map {
+      height: 80%;
+      width: 80%; }
+  #contact .contact-text {
+    width: 80%;
+    height: 80%;
+    padding: 2.5rem; }
+    #contact .contact-text .contact-lg {
+      margin: 1rem 0;
+      text-transform: uppercase;
+      font-size: 1.2rem; }
+    #contact .contact-text .contact-sm {
+      line-height: 1.7rem; }

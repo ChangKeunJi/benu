@@ -6,6 +6,10 @@ const brand = document.getElementById("brand");
 const header = document.querySelector("header");
 const body = document.querySelector("body");
 
+const imgSlides = document.querySelectorAll(".img-slider");
+const arrowRight = document.querySelector(".fa-arrow-right");
+const arrowLeft = document.querySelector(".fa-arrow-left");
+
 let showMenu = false;
 
 // Hamburger Menu
@@ -15,18 +19,24 @@ const toggle = () => {
     menuBtn.classList.add("close");
     menuNav.classList.add("show");
     navItem.forEach(i => i.classList.add("show"));
+    if (arrowRight) {
+      arrowRight.style.display = "none";
+    }
     showMenu = true;
   } else {
     menuBtn.classList.remove("close");
     menuNav.classList.remove("show");
     navItem.forEach(i => i.classList.remove("show"));
+    if (arrowLeft) {
+      arrowRight.style.display = "block";
+    }
     showMenu = false;
   }
 };
 
 menuBtn.addEventListener("click", toggle);
 
-//! Hover - Menu Border bottom effect
+// Hover - Menu Border bottom effect
 
 const borderBottom = function() {
   navLink.forEach(link => link.classList.remove("active"));
@@ -38,7 +48,7 @@ navLink.forEach(nav => {
   nav.addEventListener("mouseover", borderBottom);
 });
 
-// Close menu when click outside of menu.
+//? Close menu when click outside of menu.
 
 // const closingMenu = e => {
 //   if (e.target !== menuBtn && e.target !== navLink) {
@@ -73,3 +83,41 @@ const imageGallery = () => {
 };
 
 imageGallery();
+
+// TEAM - Image Slider
+
+let current = 0;
+
+const reset = () => {
+  imgSlides.forEach(slide => {
+    slide.style.display = "none";
+  });
+};
+
+const slideStart = () => {
+  reset();
+  imgSlides[0].style.display = "inherit";
+};
+
+arrowRight.addEventListener("click", () => {
+  reset();
+  if (current === 3) {
+    current = -1;
+  }
+
+  imgSlides[current + 1].style.display = "inherit";
+  current++;
+});
+
+arrowLeft.addEventListener("click", () => {
+  reset();
+  if (current === 0) {
+    current = 4;
+  }
+
+  imgSlides[current - 1].style.display = "inherit";
+
+  current--;
+});
+
+slideStart();

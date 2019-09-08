@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://kit.fontawesome.com/6671ec9365.js"></script>
+    <link rel="stylesheet" href="css/main.css" />
+    <title>Benu</title>
+  </head>
+  <body>
+    <header class="rest">
+      <div id="benu-btn">
+        <h1><a href="index.html">Benu.</a></h1>
+      </div>
+
+      <div class="page-title">
+        <h1>/ contact.</h1>
+      </div>
+
+      <div class="menu-btn rest">
+        <div class="btn-line"></div>
+        <div class="btn-line"></div>
+        <div class="btn-line"></div>
+      </div>
+
+      <nav class="menu">
+        <ul class="menu-nav">
+          <li class="nav-item current">
+            <a href="index.html" class="nav-link">HOME</a>
+          </li>
+          <li class="nav-item">
+            <a href="about.html" class="nav-link">ABOUT</a>
+          </li>
+          <li class="nav-item">
+            <a href="team.html" class="nav-link">TEAM</a>
+          </li>
+          <li class="nav-item">
+            <a href="contact.html" class="nav-link">CONTACT</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <section id="contact">
+      <div class="map">
+        <div id="map"></div>
+      </div>
+      <div class="contact-text">
+        <div>
+          <div class="contact-lg">Location</div>
+          <div class="contact-sm">
+            Benu is housed in a historic building in the heart of San
+            Francisco’s SOMA district. The restaurant is within walking distance
+            of the Moscone Center, Yerba Buena Gardens, the Contemporary Jewish
+            Museum and many hotels including the St. Regis, W, Four Seasons and
+            The Palace.
+            <br />
+            22 Hawthorne Street San Francisco CA 94105
+          </div>
+        </div>
+        <div>
+          <div class="contact-lg">Hours</div>
+          <div class="contact-sm">
+            Benu is open for dinner Tuesday through Saturday. Seating times are
+            available Tuesday to Saturday from 6:00pm to 9:00pm. Private dining
+            is available at all times.
+          </div>
+        </div>
+        <div>
+          <div class="contact-lg">Reservation</div>
+          <div class="contact-sm">
+            Reservations are accepted by phone Tuesday through Saturday from
+            10:00am to 4:00pm at +1.415.685.4860, and can also be made online.
+            Reservations may be made up to two months in advance and a credit
+            card is required to hold the reservation.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Google Map API -->
+
+    <script>
+      function initMap() {
+        let benu = { lat: 37.785429, lng: -122.399223 };
+
+        let map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 15,
+          center: benu
+        });
+
+        var marker = new google.maps.Marker({
+          position: benu,
+          map: map
+        });
+      }
+    </script>
+
+    <script
+      async
+      defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBsd48LbAaGIfqCn505-MAM5qYZhsyx6FM&callback=initMap"
+    ></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

@@ -1,38 +1,43 @@
 @import "config";
 @import "menu";
-
+@import "mobile";
 // Home
-
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Open Sans", sans-serif;
   height: 100vh;
+  width: 100%;
   overflow: hidden;
+  overflow-x: hidden;
   position: relative;
-  background: rgb(255, 255, 255);
+  background: rgb(223, 219, 219);
 
   header {
-    &.about,
-    &.team {
+    &.rest {
       height: 15%;
-      background: lighten($secondary-color, 20);
-      color: #fff;
+      color: #000;
+      position: relative;
+      background-color: #eee;
 
       #benu-btn {
-        position: relative;
-
-        h1 {
-          margin: 0;
-          a {
-            position: fixed;
-            top: 1.5rem;
-            left: 1.5rem;
-            text-decoration: none;
-            color: #eee;
-          }
+        height: inherit;
+        position: fixed;
+        display: flex;
+        align-items: center;
+        padding-left: 1rem;
+        a {
+          text-decoration: none;
+          color: #000;
         }
+      }
+      .page-title {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-bottom: 1px solid #000;
       }
     }
   }
@@ -51,7 +56,7 @@ body {
 
     a {
       padding-right: 1.5rem;
-      color: #fff;
+      color: #eee;
 
       &:hover {
         color: $secondary-color;
@@ -67,7 +72,6 @@ body {
       font-size: 7rem;
       left: 10%;
       top: 40%;
-      // transform: translateY(-20%);
       color: #eee;
       opacity: 0;
       transform: translateY(50px);
@@ -78,12 +82,12 @@ body {
 }
 
 // About
+
 #about {
   height: 85%;
   .container {
     display: flex;
     padding: 2rem;
-    // height: 100%;
     .about-image {
       width: 50%;
       display: flex;
@@ -121,6 +125,94 @@ body {
       width: 50%;
       padding: 4rem;
       line-height: 2.2rem;
+    }
+  }
+}
+
+// Team
+
+#team {
+  height: 85%;
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr;
+  padding-top: 1.5rem;
+
+  .img-slider {
+    display: grid;
+    grid-template-areas:
+      "team-img team-title"
+      "team-text team-text";
+    grid-template-columns: repeat(2, 1fr);
+
+    .team-img {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      img {
+        width: 70%;
+        background-size: cover;
+        background-position: center;
+      }
+    }
+
+    .team-title {
+      grid-area: team-title;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .team-text {
+      padding: 0 5rem;
+      grid-area: team-text;
+      line-height: 1.7rem;
+      animation: reveal 1.5s cubic-bezier(0, 0, 0, 1) 1 normal forwards;
+    }
+  }
+
+  .arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .fa-arrow-right {
+      z-index: 3;
+    }
+  }
+}
+
+// Contact
+
+#contact {
+  height: 85%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  .map {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    #map {
+      height: 80%;
+      width: 80%;
+    }
+  }
+
+  .contact-text {
+    width: 80%;
+    height: 80%;
+    padding: 2.5rem;
+
+    .contact-lg {
+      margin: 1rem 0;
+      text-transform: uppercase;
+      font-size: 1.2rem;
+    }
+
+    .contact-sm {
+      line-height: 1.7rem;
     }
   }
 }
