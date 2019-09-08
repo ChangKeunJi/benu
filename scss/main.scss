@@ -1,6 +1,6 @@
 @import "config";
 @import "menu";
-@import "mobile";
+
 // Home
 body {
   margin: 0;
@@ -9,7 +9,7 @@ body {
   font-family: "Open Sans", sans-serif;
   height: 100vh;
   width: 100%;
-  overflow: hidden;
+  // overflow: hidden;
   overflow-x: hidden;
   position: relative;
   background: rgb(223, 219, 219);
@@ -216,3 +216,5 @@ body {
     }
   }
 }
+
+@import "mobile";

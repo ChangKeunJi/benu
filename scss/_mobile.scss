@@ -1,33 +1,122 @@
-@include mediaSm {
+@include mediaMd {
   body {
-    // overflow: visible;
-  }
-
-  .menu {
-    left: 0;
+    overflow: scroll;
     width: 100%;
-  }
+    overflow-x: hidden;
 
+    #text {
+      #brand {
+        top: 40%;
+        left: 30%;
+      }
+    }
+
+    .menu {
+      left: 0;
+      width: 100%;
+    }
+
+    #benu-btn {
+      h1 {
+        display: none;
+      }
+    }
+
+    #about {
+      .container {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
+        padding-top: 2rem;
+        justify-content: center;
+        align-items: center;
+
+        .about-image,
+        .about-text {
+          width: 80%;
+        }
+
+        .about-image {
+          .img-selected {
+            width: 100%;
+            height: 60%;
+          }
+        }
+      }
+      .img-preview {
+        display: none !important;
+      }
+    }
+
+    #team {
+      display: inline-block;
+      .arrow {
+        display: none;
+      }
+
+      .img-slider {
+        display: block !important;
+
+        img {
+          margin-top: 5rem;
+        }
+      }
+    }
+
+    #contact {
+      display: inline-block;
+
+      .map {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50%;
+        margin: 2rem 0;
+        #map {
+          height: 100%;
+        }
+      }
+
+      .contact-text {
+        .contact-block {
+          margin-bottom: 3rem;
+        }
+      }
+    }
+  }
+}
+
+@include mediaLg {
   #benu-btn {
     h1 {
       display: none;
     }
   }
-
-  // About
-
   #about {
     .container {
       display: flex;
-      flex-wrap: wrap;
+      flex-direction: column;
+      padding: 0;
+      margin: 0;
+      padding-top: 2rem;
       justify-content: center;
       align-items: center;
 
+      .about-image,
+      .about-text {
+        width: 80%;
+      }
+
       .about-image {
-        .img-preview {
-          display: none;
+        .img-selected {
+          width: 100%;
+          height: 60%;
         }
       }
+    }
+    .img-preview {
+      display: none !important;
     }
   }
 }

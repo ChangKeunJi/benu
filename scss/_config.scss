@@ -16,26 +16,28 @@ $secondary-color: #444;
   }
 }
 
-// iPhone Size
+// iPhone X Size
 
-@mixin mediaSm {
-  @media screen and (max-width: 415px) {
-    @content;
-  }
-}
-
-// iPad size
+// @mixin mediaSm {
+//   @media screen and (max-width: 500px) {
+//     @content;
+//   }
+// }
 
 @mixin mediaMd {
-  @media screen and (min-width: 416px) and (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     @content;
   }
 }
 
-// Bigger then iPad
-
 @mixin mediaLg {
-  @media screen and (min-width: 769px) {
+  @media screen and (min-width: 769px) and (max-width: 1144px) {
+    @content;
+  }
+}
+
+@mixin mediaXl {
+  @media screen and (min-width: 1145px) {
     @content;
   }
 }
