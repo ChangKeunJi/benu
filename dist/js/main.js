@@ -48,20 +48,7 @@ navLink.forEach(nav => {
   nav.addEventListener("mouseover", borderBottom);
 });
 
-//? Close menu when click outside of menu.
-
-// const closingMenu = e => {
-//   if (e.target !== menuBtn && e.target !== navLink) {
-//     menuBtn.classList.remove("close");
-//     menuNav.classList.remove("show");
-//     navItem.forEach(i => i.classList.remove("show"));
-//     showMenu = false;
-//   }
-// };
-
-// body.addEventListener("click", closingMenu);
-
-// Image Gallery
+// ABOUT - Image Gallery
 
 const imageGallery = () => {
   const selected = document.querySelector(".img-selected");

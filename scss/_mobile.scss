@@ -88,6 +88,10 @@
 }
 
 @include mediaLg {
+  body {
+    overflow: scroll;
+  }
+
   #benu-btn {
     h1 {
       display: none;
