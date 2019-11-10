@@ -246,6 +246,7 @@ body #icons {
 body #icons a {
   padding-right: 1.5rem;
   color: #eee;
+  text-decoration: none;
 }
 
 body #icons a:hover {
